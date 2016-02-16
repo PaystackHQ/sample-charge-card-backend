@@ -1,0 +1,22 @@
+{
+  "name": "testpaystack",
+  "version": "0.0.1",
+  "description": "Test the paystack package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "https://github.com/PaystackHQ/bare-node-backend-for-apps",
+  "keywords": [
+    "paystack",
+    "node",
+    "token"
+  ],
+  "author": "Ibrahim Lawal",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "node-uuid": "^1.4.7",
+    "paystack": "^1.1.0"
+  }
+}
