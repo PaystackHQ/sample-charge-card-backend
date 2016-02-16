@@ -20,7 +20,7 @@ app.use(bodyParser.urlencoded({   // to support URL-encoded bodies
 }));
 
 app.get('/', function(req, res) {
-  res.send('<body><head><link href="favicon.ico" rel="shortcut icon" /></head><body><h1>Awesome!</h1><p>Your server is set up. Go ahead and configure your Paystack sample apps to post <b>[email, token, amountinkobo]</b> to <a href="#">http://'+req.headers.host+'/charge/</a>.</p></body></html>');
+  res.send('<body><head><link href="favicon.ico" rel="shortcut icon" /></head><body><h1>Awesome!</h1><p>Your server is set up. Go ahead and configure your Paystack sample apps to post <b>[email, token, amountinkobo]</b> to <a href="#">https://'+req.headers.host+'/charge/</a>.</p></body></html>');
 });
 
 app.post('/charge', function(req, res) {
