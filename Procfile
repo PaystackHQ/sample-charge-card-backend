@@ -1,1 +1,1 @@
-web: bundle exec node index.js -p $PORT
+web: node index.js
