@@ -1,5 +1,5 @@
 {
-  "name": "Bare Node Backend for Mobile Apps",
+  "name": "Backend for Mobile Apps",
   "description": "A simple, Heroku-deployabble backend that you can use to demo our mobile apps.",
   "repository": "https://github.com/PaystackHQ/bare-node-backend-for-apps",
   "logo": "https://raw.github.com/yabacon/paystack-php/HEAD/img/paystack.png?raw=true",
