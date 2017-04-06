@@ -52,6 +52,11 @@ app.get('/new-access-code', function(req, res) {
                     "display_name":"Requested by",
                     "variable_name":"requested_by",
                     "value": req.headers['user-agent']
+                },
+                {
+                    "display_name":"Server",
+                    "variable_name":"server",
+                    "value": req.headers.host
                 }
             ]
         }
@@ -60,7 +65,7 @@ app.get('/new-access-code', function(req, res) {
             res.send({error:error});
             return;
         }
-        res.send(body.data.accesscode);
+        res.send(body.access_code);
     });
 });
 
@@ -74,7 +79,11 @@ app.get('/verify-with-paystack/:reference', function(req, res) {
             res.send({error:error});
             return;
         }
-        res.send(body.data.gateway_response);
+        if(body.success){
+            // save authorization
+            var auth = body.authorization;
+        }
+        res.send(body.gateway_response);
     });
 });
 
