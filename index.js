@@ -72,14 +72,13 @@ app.get('/new-access-code', function(req, res) {
 app.get('/verify-with-paystack/:reference', function(req, res) {
     var reference = req.params.reference;
 
-    paystack.transaction.verify({
-        reference:     reference
-    },function(error, body) {
+    paystack.transaction.verify(reference,
+        function(error, body) {
         if(error){
             res.send({error:error});
             return;
         }
-        if(body.success){
+        if(body.data.success){
             // save authorization
             var auth = body.authorization;
         }
