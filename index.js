@@ -65,7 +65,7 @@ app.get('/new-access-code', function(req, res) {
             res.send({error:error});
             return;
         }
-        res.send(body.access_code);
+        res.send(body);
     });
 });
 
@@ -83,7 +83,7 @@ app.get('/verify-with-paystack/:reference', function(req, res) {
             // save authorization
             var auth = body.authorization;
         }
-        res.send(body.gateway_response);
+        res.send(body);
     });
 });
 
