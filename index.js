@@ -24,7 +24,7 @@ res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </head><body><h1>Awesome!</h1><p>Your server is set up. \
     Go ahead and configure your Paystack sample apps to make calls to: \
     <ul><li> <a href="#">https://'+req.headers.host+'/new-access-code/</a></li> \
-    <li><a href="#">https://'+req.headers.host+'/verify-with-paystack/:reference</a></li></ul> \
+    <li><a href="#">https://'+req.headers.host+'/verify/:reference</a></li></ul> \
     </p></body></html>');
 });
 
@@ -69,7 +69,7 @@ app.get('/new-access-code', function(req, res) {
     });
 });
 
-app.get('/verify-with-paystack/:reference', function(req, res) {
+app.get('/verify/:reference', function(req, res) {
     var reference = req.params.reference;
 
     paystack.transaction.verify(reference,
@@ -89,7 +89,7 @@ app.get('/verify-with-paystack/:reference', function(req, res) {
 //The 404 Route (ALWAYS Keep this as the last route)
 app.get('/*', function(req, res){
     res.status(404).send('Only GET /new-access-code \
-        or GET /verify-with-paystack/{reference} is allowed');
+        or GET /verify/{reference} is allowed');
 });
 
 app.listen(app.get('port'), function() {

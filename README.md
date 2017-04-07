@@ -5,7 +5,7 @@ This is a really simple [NODE](http://www.nodejs.com/) webapp that you can use t
 
 It has only 2 endpoints
 
-- GET `/verify-with-paystack/:reference` which verifies a transaction, returning the gateway response.
+- GET `/verify/:reference` which verifies a transaction, returning the gateway response.
 
 - GET `/new-access-code` which starts a new transaction and returns a fresh access code.
 
