@@ -23,8 +23,7 @@ app.get('/', function(req, res) {
 res.send('<body><head><link href="favicon.ico" rel="shortcut icon" />\
     </head><body><h1>Awesome!</h1><p>Your server is set up. \
     Go ahead and configure your Paystack sample apps to make calls to: \
-    <ul><li> <a href="#">https://'+req.headers.host+'/new-access-code/</a></li> \
-    <li><a href="#">https://'+req.headers.host+'/verify/:reference</a></li></ul> \
+    <ul><li> <a href="#">https://'+req.headers.host+'</a></li></ul> \
     </p></body></html>');
 });
 
@@ -33,7 +32,10 @@ app.get('/new-access-code', function(req, res) {
     var cartid     = req.params.cartid;
     // you can then look up customer and cart details in a db etc
     // I'm hardcoding an email here for simplicity
-    amountinkobo = 80000000;
+    amountinkobo = process.env.TEST_AMOUNT * 100;
+    if(isNaN(amountinkobo) || (amountinkobo < 2500)){
+        amountinkobo = 2500;
+    }
     email = process.env.SAMPLE_EMAIL;
 
     // all fields supported by this call can be gleaned from
