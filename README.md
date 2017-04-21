@@ -1,4 +1,4 @@
-Sample Charge Token Backend
+Sample Charge Card Backend
 ====
 
 This is a really simple [NODE](http://www.nodejs.com/) webapp that you can use to test Paystack's sample mobile apps.
